@@ -1,0 +1,424 @@
+/* Общие стили для всех экранов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo img {
+    width: 25%;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.group {
+    text-align: right;
+}
+
+.group p {
+    margin: 5px 0;
+}
+
+.content {
+    display: flex;
+    margin: 0px;
+}
+
+aside {
+    width: 20%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+main {
+    width: 80%;
+    padding: 20px;
+}
+
+main h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+main h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.avatar img {
+    width: 30%;
+    height: auto;
+    border-radius: 10%;
+    margin: 20px;
+    float: right;
+}
+
+iframe {
+    width: 100%; /* Устанавливаем ширину iframe в 100% */
+    max-width: 720px; /* Максимальная ширина для более крупных экранов */
+    height: auto;
+    aspect-ratio: 16 / 9; /* Сохраняем пропорции 16:9 */
+}
+
+footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    margin-top: 0px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.telegram-link {
+    margin-left: 10px;
+}
+
+.telegram-logo {
+    width: 25px;
+    height: 25px;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin: 0px 0;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.navbar {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-menu li {
+    margin: 0;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    background-color: #eaeaea;
+    color: #000;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media only screen and (max-width: 768px) {
+    header, nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .logo img {
+        width: 50%;
+    }
+
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+
+    .content {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    aside {
+        width: 100%;
+        padding: 10px;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    main {
+        width: 100%;
+        padding: 15px;
+    }
+
+    main h1 {
+        font-size: 24px;
+    }
+
+    main p {
+        font-size: 16px;
+    }
+
+    .avatar {
+        text-align: center;
+    }
+
+    .avatar img {
+        width: 80%; /* Уменьшаем изображение для мобильных */
+        float: none;
+        margin: 0 auto 20px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .telegram-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .sidebar-menu li {
+        font-size: 16px;
+    }
+
+    .card {
+        max-height: 250px;
+    }
+
+    .card h2 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.8rem;
+    }
+
+
+
+    /* Поддержка модальных окон */
+    .modal-content {
+        width: 100%;
+        padding: 15px;
+        margin: 20% auto;
+    }
+}
+
+/* Медиазапросы для устройств с очень маленьким экраном */
+@media only screen and (max-width: 480px) {
+    header, nav {
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 60%;
+    }
+
+    .navbar-menu li {
+        font-size: 14px;
+    }
+
+    main h1 {
+        font-size: 20px;
+    }
+
+    main p {
+        font-size: 14px;
+    }
+
+    .avatar img {
+        width: 100%; /* Полная ширина на очень маленьких экранах */
+    }
+
+    footer {
+        padding: 5px;
+    }
+
+    .telegram-logo {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+/* Добавляем медиазапрос для таблиц на мобильных устройствах */
+@media only screen and (max-width: 768px) {
+    /* Ограничение ширины и создание горизонтальной прокрутки */
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+    
+    /* Добавляем стиль для блоков, чтобы таблицы отображались внутри контейнеров */
+    .content table {
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+    }
+
+    /* Уменьшаем размеры текста внутри таблицы для лучшей адаптивности */
+    th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Карточки */
+.cards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 300px; /* Ограничение высоты для карточек */
+}
+
+.card img {
+    width: 100%;
+    height: auto; /* Убираем фиксированную высоту */
+    object-fit: contain; /* Делаем так, чтобы изображение полностью вписывалось */
+    margin-bottom: 10px;
+}
+
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    white-space: nowrap; /* Предотвращает разрыв строки */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавляет троеточие для длинного текста */
+}
+
+.card p {
+    font-size: 0.9rem; /* Уменьшение шрифта для мобильных */
+    line-height: 1.4;
+    overflow: hidden;
+}
+
+.card-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #218838;
+}
+
+
+/* Стили для модального окна */
+.modal-content {
+    width: 90%;
+    max-width: 500px;
+    margin: 10% auto;
+    padding: 20px;
+    background: #fefefe;
+    border: 1px solid #888;
+    border-radius: 8px;
+}
+
+/* Форма */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+input, select, textarea, button {
+    font-size: 1rem;
+}

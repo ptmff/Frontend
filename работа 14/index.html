@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание с анимацией</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="animated-header">Добро пожаловать!</h1>
+        <p class="animated-paragraph">Наведите мышь на заголовок или нажмите здесь!</p>
+    </header>
+
+    <main>
+        <button class="show-lectures-btn">Показать лекции</button>
+        <table class="lectures-table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Тема</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Основы языка HTML</td></tr>
+                <tr><td>2</td><td>Углубленное изучение HTML</td></tr>
+                <tr><td>3</td><td>Основы работы с CSS</td></tr>
+                <tr><td>4</td><td>Адаптивная верстка. Flexbox и Grid Layout</td></tr>
+                <tr><td>5</td><td>Bootstrap — работа с фреймворком</td></tr>
+                <tr><td>6</td><td>Основы языка JavaScript</td></tr>
+                <tr><td>7</td><td>Работа с DOM и событиями в JavaScript</td></tr>
+                <tr><td>8</td><td>Введение в GitHub и GitHub Pages</td></tr>
+            </tbody>
+        </table>
+
+        <div class="student-photo-container">
+            <img src="image.jpg" alt="Фото студента" class="student-photo">
+        </div>
+
+        <form id="submission-form">
+            <input type="text" placeholder="Введите ваше имя" required>
+            <button type="submit">Отправить</button>
+        </form>
+        <br><br>
+        <section class="comparison-section">
+            <h2 class="comparison-title">Разница между CSS и JS анимацией</h2>
+            <div class="comparison-container">
+                <div class="comparison-item">
+                    <h3 class="comparison-subtitle">CSS-анимация</h3>
+                    <ul>
+                        <li>Простая реализация (особенно для стандартных переходов).</li>
+                        <li>Выполняется напрямую браузером, часто быстрее благодаря оптимизации.</li>
+                        <li>Подходит для статических и простых эффектов (например, изменение цвета или размера).</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h3 class="comparison-subtitle">JS-анимация</h3>
+                    <ul>
+                        <li>Даёт больше контроля (например, сложные сценарии, физика движения).</li>
+                        <li>Используется для взаимодействий, зависящих от состояния или логики.</li>
+                        <li>Менее оптимальна для некоторых браузеров, если не использовать специальные библиотеки (например, GSAP).</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="comparison-summary">CSS лучше для простых и производительных анимаций, а JS — для сложных и динамических.</p>
+        </section>
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

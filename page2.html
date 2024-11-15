@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стили для модального окна */
+        .modal {
+            display: none; /* Скрываем модальное окно по умолчанию */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0); /* Черный фон */
+            background-color: rgba(0,0,0,0.4); /* Полупрозрачный фон */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* Центрируем модальное окно */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Ширина модального окна */
+        }
+        .close {
+            color: #aaa; /* Цвет кнопки закрытия */
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        form {
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack elements vertically */
+            gap: 15px; /* Space between form elements */
+            background-color: #f9f9f9; /* Light background for the form */
+            padding: 20px; /* Add padding inside the form */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        label {
+            font-size: 16px; /* Increase font size for labels */
+            color: #333; /* Darker color for better readability */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            padding: 10px; /* Add padding for input fields */
+            border: 1px solid #ccc; /* Light border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size for input fields */
+            transition: border-color 0.3s ease; /* Smooth transition for border color */
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #007bff; /* Change border color on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        textarea {
+            resize: vertical; /* Allow vertical resizing only */
+            min-height: 100px; /* Minimum height for the textarea */
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px; /* Padding for the submit button */
+            background-color: #28a745; /* Green background for submit button */
+            color: white; /* White text */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="favicon.ico"></div>
+        <div class="group">
+            <p>Группа: ЭФБО-01-23</p>
+            <p>Павленко Тимофей Сергеевич</p>
+        </div>
+    </header>
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="page3.html">Первый семестр</a></li>
+            <li><a href="page4.html">Второй семестр</a></li>
+            <li><a href="page2.html">Услуги</a></li>
+            <li><a href="#">Авторизация</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <aside>
+            <ul class="sidebar-menu">
+                <li><a href = "#11111">Разработка веб-приложений</a></li>
+                <li><a href = "#22222">Комплексный подход к разработке</a></li>
+                <li><a href = "#33333">Использование передовых технологий</a></li>
+                <li><a href = "#44444">Ориентация на результат и удовлетворенность клиентов</a></li>
+                <li><a href = "#55555">Постоянное совершенствование</a></li>
+            </ul>
+        </aside>
+        <main>
+            <div class="main-info">
+                <div class="cards">
+                    <div class="card">
+                        <img class="card-img smaller-img" src="images.png" alt="#">
+                        <h2>Сайт-визитка</h2>
+                        <button class="card-btn" id="openModal1">Заказать</button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="Google_2015_logo.png" alt="#">
+                        <h2>Корпоративный сайт</h2>
+                        <button class="card-btn" id="openModal2">Заказать</button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="amazon.webp" alt="#">
+                        <h2>Интернет-магазин</h2>
+                        <button class="card-btn" id="openModal3">Заказать</button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img smaller-img" src="images.png" alt="#">
+                        <h2>Сайт-визитка</h2>
+                        <button class="card-btn" id="openModal4">Заказать</button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="Google_2015_logo.png" alt="#">
+                        <h2>Корпоративный сайт</h2>
+                        <button class="card-btn" id="openModal5">Заказать</button>
+                    </div>
+                    <div class="card">
+                        <img class="card-img" src="amazon.webp" alt="#">
+                        <h2>Интернет-магазин</h2>
+                        <button class="card-btn" id="openModal6">Заказать</button>
+                    </div>
+                </div>
+                
+                
+                <br>
+                <section id="11111">
+                <h1 class="heading">Разработка веб-приложений</h1>
+                <p>Разработка веб-приложений — это не просто работа для меня, а настоящая страсть, которую я развиваю уже много лет. За это время я накопил обширный опыт, который позволяет мне создавать качественные и эффективные решения для различных задач. Я постоянно совершенствую свои навыки, изучая новые технологии и методики, чтобы предлагать своим клиентам инновационные и конкурентоспособные продукты.</p>
+                </section>
+                <section id="22222">
+                <h2 class="heading">Комплексный подход к разработке</h2>
+                <p>Мой подход к разработке веб-приложений основан на глубоком понимании потребностей бизнеса и конечных пользователей. Я тщательно анализирую требования, разрабатываю подробные спецификации и создаю детальные планы проектов. Это позволяет мне эффективно управлять процессом разработки, минимизировать риски и обеспечивать своевременную доставку проектов.</p>
+                </section>
+                <section id="33333">
+                <h2 class="heading">Использование передовых технологий</h2>
+                <p>В своей работе я использую самые современные технологии и инструменты, такие как React, Angular, Vue.js, Node.js, MongoDB и многие другие. Это позволяет мне создавать масштабируемые, надежные и высокопроизводительные веб-приложения, которые соответствуют самым высоким стандартам качества. Я также уделяю большое внимание вопросам безопасности и оптимизации, чтобы обеспечить защиту данных и высокую производительность приложений.</p>
+                </section>
+                <section id="44444">
+                <h2 class="heading">Ориентация на результат и удовлетворенность клиентов</h2>
+                <p>Для меня важно не только создать качественный продукт, но и обеспечить полное удовлетворение потребностей клиентов. Я поддерживаю тесное взаимодействие с заказчиками на всех этапах разработки, чтобы гарантировать, что конечный результат полностью соответствует их ожиданиям. Я также предоставляю всестороннюю поддержку и техническое обслуживание, чтобы обеспечить бесперебойную работу приложений и помочь клиентам достичь их бизнес-целей.</p>
+                </section>
+                <section id="55555">
+                <h2 class="heading">Постоянное совершенствование</h2>
+                <p>Я верю в непрерывное обучение и совершенствование. Я регулярно участвую в профессиональных конференциях, семинарах и онлайн-курсах, чтобы поддерживать свои знания и навыки на самом высоком уровне. Я также активно делюсь своим опытом с коллегами и сообществом разработчиков, публикуя статьи, ведя блог и участвуя в открытых проектах.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p class="copyright">&copy; Павленко Тимофей Сергеевич, 2024</p>
+            <a href="https://t.me/ptmff" target="_blank" class="telegram-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" alt="Telegram" class="telegram-logo">
+            </a>
+        </div>
+    </footer>
+    <!-- Модальные окна -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Форма обратной связи</h2>
+            <form id="contactForm1">
+                <!-- Форма здесь -->
+                <label for="name1">Имя:</label>
+                <input type="text" id="name1" name="name1" required>
+                <label for="email1">Электронная почта:</label>
+                <input type="email" id="email1" name="email1" required>
+                <label for="phone1">Телефон:</label>
+                <input type="tel" id="phone1" name="phone1" required>
+                <label for="country1">Страна:</label>
+                <select id="country1" name="country1">
+                    <option value="">Выберите страну</option>
+                    <option value="Russia">Россия</option>
+                    <option value="USA">США</option>
+                    <!-- Add more options here -->
+                </select>
+                <label for="date1">Дата:</label>
+                <input type="date" id="date1" name="date1" required>
+                <label for="comments1">Комментарии:</label>
+                <textarea id="comments1" name="comments1"></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Форма обратной связи</h2>
+            <form id="contactForm2">
+                <!-- Форма здесь -->
+                <label for="name2">Имя:</label>
+                <input type="text" id="name2" name="name2" required>
+                <label for="email2">Электронная почта:</label>
+                <input type="email" id="email2" name="email2" required>
+                <label for="phone2">Телефон:</label>
+                <input type="tel" id="phone2" name="phone2" required>
+                <label for="country2">Страна:</label>
+                <select id="country2" name="country2">
+                    <option value="">Выберите страну</option>
+                    <option value="Russia">Россия</option>
+                    <option value="USA">США</option>
+                    <!-- Add more options here -->
+                </select>
+                <label for="date2">Дата:</label>
+                <input type="date" id="date2" name="date2" required>
+                <label for="comments2">Комментарии:</label>
+                <textarea id="comments2" name="comments2"></textarea>
+                <button type="submit">Отправить</button>
+            </form>              
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Форма обратной связи</h2>
+            <form id="contactForm3">
+                <!-- Форма здесь -->
+                <label for="name3">Имя:</label>
+                <input type="text" id="name3" name="name3" required>
+                <label for="email3">Электронная почта:</label>
+                <input type="email" id="email3" name="email3" required>
+                <label for="phone3">Телефон:</label>
+                <input type="tel" id="phone3" name="phone3" required>
+                <label for="country3">Страна:</label>
+                <select id="country3" name="country3">
+                    <option value="">Выберите страну</option>
+                    <option value="Russia">Россия</option>
+                    <option value="USA">США</option>
+                    <!-- Add more options here -->
+                </select>
+                <label for="date3">Дата:</label>
+                <input type="date" id="date3" name="date3" required>
+                <label for="comments3">Комментарии:</label>
+                <textarea id="comments3" name="comments3"></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Форма обратной связи</h2>
+            <form id="contactForm1">
+                <!-- Форма здесь -->
+                <label for="name1">Имя:</label>
+                <input type="text" id="name1" name="name1" required>
+                <label for="email1">Электронная почта:</label>
+                <input type="email" id="email1" name="email1" required>
+                <label for="phone1">Телефон:</label>
+                <input type="tel" id="phone1" name="phone1" required>
+                <label for="country1">Страна:</label>
+                <select id="country1" name="country1">
+                    <option value="">Выберите страну</option>
+                    <option value="Russia">Россия</option>
+                    <option value="USA">США</option>
+                    <!-- Add more options here -->
+                </select>
+                <label for="date1">Дата:</label>
+                <input type="date" id="date1" name="date1" required>
+                <label for="comments1">Комментарии:</label>
+                <textarea id="comments1" name="comments1"></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Форма обратной связи</h2>
+            <form id="contactForm1">
+                <!-- Форма здесь -->
+                <label for="name1">Имя:</label>
+                <input type="text" id="name1" name="name1" required>
+                <label for="email1">Электронная почта:</label>
+                <input type="email" id="email1" name="email1" required>
+                <label for="phone1">Телефон:</label>
+                <input type="tel" id="phone1" name="phone1" required>
+                <label for="country1">Страна:</label>
+                <select id="country1" name="country1">
+                    <option value="">Выберите страну</option>
+                    <option value="Russia">Россия</option>
+                    <option value="USA">США</option>
+                    <!-- Add more options here -->
+                </select>
+                <label for="date1">Дата:</label>
+                <input type="date" id="date1" name="date1" required>
+                <label for="comments1">Комментарии:</label>
+                <textarea id="comments1" name="comments1"></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Форма обратной связи</h2>
+            <form id="contactForm1">
+                <!-- Форма здесь -->
+                <label for="name1">Имя:</label>
+                <input type="text" id="name1" name="name1" required>
+                <label for="email1">Электронная почта:</label>
+                <input type="email" id="email1" name="email1" required>
+                <label for="phone1">Телефон:</label>
+                <input type="tel" id="phone1" name="phone1" required>
+                <label for="country1">Страна:</label>
+                <select id="country1" name="country1">
+                    <option value="">Выберите страну</option>
+                    <option value="Russia">Россия</option>
+                    <option value="USA">США</option>
+                    <!-- Add more options here -->
+                </select>
+                <label for="date1">Дата:</label>
+                <input type="date" id="date1" name="date1" required>
+                <label for="comments1">Комментарии:</label>
+                <textarea id="comments1" name="comments1"></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>

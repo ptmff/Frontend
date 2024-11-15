@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    text-align: center;
+}
+
+.animated-header {
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.animated-header:hover {
+    transform: scale(1.2);
+}
+
+.animated-paragraph {
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.animated-paragraph.clicked {
+    background-color: #d4edda;
+}
+
+.lectures-table {
+    margin: 20px auto;
+    width: 80%;
+    border-collapse: collapse;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.lectures-table th, .lectures-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.lectures-table.visible {
+    display: table;
+    opacity: 1;
+}
+
+.student-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.student-photo:hover {
+    transform: rotate(360deg);
+}
+
+#submission-form {
+    margin: 20px 0;
+}
+
+#submission-form .success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: opacity 0.5s ease;
+}
+
+/* Оформление блока сравнения */
+.comparison-section {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 800px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comparison-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comparison-item {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.comparison-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-subtitle {
+    font-size: 1.4rem;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.comparison-item ul {
+    list-style: disc;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.comparison-item ul li {
+    margin-bottom: 8px;
+}
+
+.comparison-summary {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    font-style: italic;
+}

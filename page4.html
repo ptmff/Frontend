@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with responsive navigation and dropdown -->
+    <header class="d-flex align-items-center p-3 bg-light border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo me-3"><img src="favicon.ico" alt="Logo" width="30"></div>
+            <div class="group text-center">
+                <p class="mb-1">Группа: ЭФБО-01-23</p>
+                <p class="mb-0">Павленко Тимофей Сергеевич</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Мой сайт</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="page3.html">Первый семестр</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="semesterDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Второй семестр
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="semesterDropdown">
+                            <li><a class="dropdown-item" href="#lections">Лекции</a></li>
+                            <li><a class="dropdown-item" href="#practices">Практики</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="page2.html">Услуги</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Авторизация</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar on the left -->
+            <aside class="col-md-3 col-lg-2 bg-light p-3 flex-shrink-0" style="position: sticky; top: 0; min-height: 100vh;">
+                <ul class="list-group sidebar-menu">
+                    <li class="list-group-item"><a href="#lections">Лекции</a></li>
+                    <li class="list-group-item"><a href="#practices">Практики</a></li>
+                    <li class="list-group-item"><a href="#products">Товары</a></li>
+                    <li class="list-group-item"><a href="#info">Информация</a></li>
+                    <li class="list-group-item"><a href="#form">Галерея</a></li>
+                    <li class="list-group-item"><a href="#form">Форма</a></li>
+                    <li class="list-group-item"><a href="#pdf">Интерактивный PDF</a></li>
+                    <li class="list-group-item"><a href="#video">Видео</a></li>
+                    <li class="list-group-item"><a href="#map">Адрес вуза</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main content -->
+            <main class="col-md-9 col-lg-10 p-4">
+                <!-- Section for Lections with a styled table -->
+                <section id="lections" class="mb-5">
+                    <h2 class="display-6">Лекции</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Номер</th>
+                                <th>Тема</th>
+                                <th>Посещение</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Основы языка HTML</td>
+                                <td><input type="checkbox" checked></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Углубленное изучение HTML</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Основы работы с CSS</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Адаптивная верстка. Flexbox и Grid Layout</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Bootstrap — работа с фреймворком</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Основы языка JavaScript</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Работа с DOM и событиями в JavaScript</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Введение в GitHub и GitHub Pages</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="practices" class="mb-5">
+                    <h2 class="display-6">Практики</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Номер</th>
+                                <th>Тема</th>
+                                <th>Посещение</th>
+                                <th>Выполнение</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Основы языка HTML</td>
+                                <td><input type="checkbox" checked></td>
+                                <td><input type="checkbox" checked></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Формы и кнопки в HTML</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Таблицы и интерактивные элементы HTML</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Основы работы с CSS</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Работа с классами в CSS</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Работа с сетками и разметкой в HTML</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Адаптивная верстка</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Bootstrap</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Основы языка JavaScript</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Базовые задачи на JS</td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Product cards using Bootstrap grid -->
+                <section id="products" class="mb-5">
+                    <h2 class="display-6">Товары</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="Google_2015_logo.png" class="card-img-top" alt="Товар 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Товар 1</h5>
+                                    <p class="card-text">Описание товара 1.</p>
+                                    <button class="btn btn-primary">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="amazon.webp" class="card-img-top" alt="Товар 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Товар 2</h5>
+                                    <p class="card-text">Описание товара 2.</p>
+                                    <button class="btn btn-primary">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="images.png" class="card-img-top" alt="Товар 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Товар 3</h5>
+                                    <p class="card-text">Описание товара 3.</p>
+                                    <button class="btn btn-primary">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Accordion for additional information -->
+                <section id="info" class="mb-5">
+                    <h2 class="display-6">Информация</h2>
+                    <div class="accordion" id="infoAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Заголовок 1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    Текст для первого пункта аккордеона.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    Заголовок 2
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    Текст для второго пункта аккордеона.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    Заголовок 3
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    Текст для третьего пункта аккордеона.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                    Заголовок 4
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    Текст для четвёртого пункта аккордеона.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slider for showcasing images -->
+                <section id="slider" class="mb-5">
+                    <h2 class="display-6">Галерея</h2>
+                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="amazon.webp" class="d-block w-100" alt="Слайд 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Google_2015_logo.png" class="d-block w-100" alt="Слайд 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images.png" class="d-block w-100" alt="Слайд 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        <style>
+                            .carousel-control-prev-icon,
+                            .carousel-control-next-icon {
+                                background-color: black;
+                            }
+                        </style>
+                        
+                    </div>
+                </section>
+
+                <!-- Form with Bootstrap styling -->
+                <section id="form" class="mb-5">
+                    <h2 class="display-6">Форма</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Имя</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Категория</label>
+                            <select class="form-select" id="category">
+                                <option>Выберите категорию</option>
+                                <option>Категория 1</option>
+                                <option>Категория 2</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </section>
+
+                <!-- Embedded PDF and video -->
+                <section id="pdf" class="mb-5">
+                    <h2 class="display-6">Интерактивный PDF-документ</h2>
+                    <div class="ratio ratio-16x9 mb-4">
+                        <iframe src="https://css4.pub/2015/textbook/somatosensory.pdf" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <section id="video" class="mb-5">
+                    <h2 class="display-6">Видео</h2>
+                    <div class="ratio ratio-16x9">
+                        <iframe width="720" height="405" src="https://rutube.ru/play/embed/4ff0d2414f1cb94964dfa1efdfc6750a/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    </div>
+                </section>
+                <section id="map" class="mb-5">
+                    <h2 class="display-6">Занятия проходят по адресу просп. Вернадского, 78, стр. 4, Москва</h2>
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A184758c10aace5c6e452c738673e3a77741f98ca2a0bba08fbfc8952d64b70a4&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer class="bg-light p-3 text-center">
+        <div class="footer-container d-flex justify-content-between align-items-center">
+            <p class="mb-0">&copy; Павленко Тимофей Сергеевич, 2024</p>
+            <a href="https://t.me/ptmff" target="_blank" class="telegram-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" alt="Telegram" class="telegram-logo" style="width: 30px;">
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
