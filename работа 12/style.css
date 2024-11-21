@@ -13,3 +13,25 @@ body {
     display: none;
     border-radius: 5px;
 }
+
+#timer {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#navigate-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#navigate-btn:hover {
+    background-color: #0056b3;
+}

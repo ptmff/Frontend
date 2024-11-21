@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="favicon.ico"></div>
+        <div class="group">
+            <p>Группа: ЭФБО-01-23</p>
+            <p>Павленко Тимофей Сергеевич</p>
+        </div>
+    </header>
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="page3.html">Первый семестр</a></li>
+            <li><a href="page4.html">Второй семестр</a></li>
+            <li><a href="page2.html">Услуги</a></li>
+            <li><a href="page5.html">Авторизация</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <aside>
+            <ul class="sidebar-menu">
+                <li><a href = "#console">Программы, выполняемые в консоли разработчика</a></li>
+                <li><a href = "#task10">Демонстрация работы с JavaScript</a></li>
+                <li><a href = "#dom-demo">Работа с DOM и взаимодействие с объектами</a></li>
+                <li><a href = "#js-demo">Встраивание JavaScript скриптов в HTML-документ</a></li>
+                <li><a href = "#js2-demo">Отладка JavaScript-сценариев и создание обработчиков событий для элементов веб-документа</a></li>
+                <li><a href = "#js3-demo">Создание анимаций на JavaScript и работа с ними</a></li>
+            </ul>
+        </aside>
+        <style>
+            .code-block {
+                background-color: #f4f4f4;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 10px;
+                margin: 20px 0;
+                overflow-x: auto;
+            }
+
+            .code-block h3 {
+                margin-top: 0;
+                font-size: 1.2em;
+                color: #333;
+            }
+
+            pre {
+                margin: 0;
+                padding: 10px;
+                background: #272822;
+                color: #f8f8f2;
+                border-radius: 5px;
+                font-family: 'Courier New', Courier, monospace;
+                overflow-x: auto;
+            }
+
+            code {
+                font-size: 0.95em;
+                line-height: 1.5;
+                color: #66d9ef;
+            }
+            #consoleOutput {
+                background-color: #000;
+                color: #0f0;
+                padding: 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+                font-family: 'Courier New', Courier, monospace;
+                max-height: 300px;
+                overflow-y: auto;
+            }
+            /* Стили для кнопки */
+            #executeTask10, #goToDomDemo, #goToJsDemo, #goToJs2Demo, #goToJs3Demo {
+                background-color: #4CAF50; /* Зеленый фон */
+                border: none; /* Убираем обводку */
+                color: white; /* Белый текст */
+                padding: 10px 20px; /* Внутренние отступы */
+                text-align: center; /* Текст по центру */
+                text-decoration: none; /* Убираем подчеркивание */
+                display: inline-block; /* Блок с шириной по содержимому */
+                font-size: 16px; /* Размер шрифта */
+                margin: 10px 0; /* Отступы сверху и снизу */
+                cursor: pointer; /* Указатель мыши */
+                border-radius: 5px; /* Закругленные углы */
+                transition: background-color 0.3s ease, transform 0.2s ease; /* Эффекты при наведении */
+            }
+
+            /* Эффект при наведении */
+            #executeTask10:hover, #goToDomDemo:hover, #goToJsDemo:hover, #goToJs2Demo:hover, #goToJs3Demo:hover {
+                background-color: #45a049; /* Более темный зеленый */
+                transform: scale(1.05); /* Легкое увеличение */
+            }
+
+            /* Эффект при нажатии */
+            #executeTask10:active, #goToDomDemo:active, #goToJsDemo:active, #goToJs2Demo:active, #goToJs3Demo:active {
+                background-color: #3e8e41; /* Еще темнее */
+                transform: scale(0.95); /* Легкое уменьшение */
+            }
+        </style>
+        <main>
+            <h1>Демонстрация возможностей</h1>
+            <section id="console">
+                <h2>Программы, выполняемые в консоли разработчика</h2>
+                <div class="code-block">
+                    <h3>Задание 1/2</h3>
+                    <pre>
+                        <code>
+                            Задание 1/2
+                            // Задаем переменные для имени и возраста
+                            let userName = prompt("Введите ваше имя:");
+                            let userAge = prompt("Введите ваш возраст:");
+                            
+                            // Приветственное сообщение
+                            alert(`Привет, ${userName}! Вам ${userAge} лет.`);
+                            console.log(`Привет, ${userName}! Вам ${userAge} лет.`);
+                            
+                            // Проверка возраста
+                            if (userAge >= 18) {
+                                alert("Вы совершеннолетний");
+                                console.log("Вы совершеннолетний");
+                            } else {
+                                alert("Вы несовершеннолетний");
+                                console.log("Вы несовершеннолетний");
+                            }
+                        </code>
+                                </pre>
+                            </div>
+                        
+                            <div class="code-block">
+                                <h3>Задание 3</h3>
+                                <pre>
+                        <code>
+                            // Генерируем случайное число от 1 до 10
+                            const randomNumber = Math.floor(Math.random() * 10) + 1;
+                            
+                            // Запрашиваем у пользователя угадать число
+                            const userGuess = parseInt(prompt("Угадайте число от 1 до 10"), 10);
+                            
+                            // Проверяем угадал ли пользователь
+                            if (userGuess === randomNumber) {
+                            alert("Поздравляем! Вы угадали число!");
+                            } else {
+                            if (userGuess < 5) {
+                                alert("Вы не угадали. Подсказка: Введенное число меньше 5.");
+                            } else if (userGuess > 5) {
+                                alert("Вы не угадали. Подсказка: Введенное число больше 5.");
+                            } else {
+                                alert("Вы не угадали. Попробуйте снова!");
+                            }
+                            }
+                            console.log("было загадано ", randomNumber);
+                        </code>
+                                </pre>
+                            </div>
+                        
+                            <div class="code-block">
+                                <h3>Задание 4</h3>
+                                <pre>
+                        <code>
+                            // Заранее заданный пароль
+                            const correctPassword = "12345";
+                            
+                            // Запрашиваем у пользователя ввод пароля
+                            const userPassword = prompt("Введите пароль");
+                            
+                            // Проверяем пароль
+                            if (userPassword && userPassword === correctPassword) {
+                            alert("Доступ разрешен");
+                            } else if (!userPassword) {
+                            alert("Пароль не может быть пустым");
+                            } else {
+                            alert("Доступ запрещен");
+                            }
+                        </code>
+                                </pre>
+                            </div>
+                        
+                            <div class="code-block">
+                                <h3>Задание 5</h3>
+                                <pre>
+                        <code>
+                            // Запрашиваем у пользователя первое число
+                            const num1 = parseFloat(prompt("Введите первое число"));
+                            
+                            // Запрашиваем у пользователя второе число
+                            const num2 = parseFloat(prompt("Введите второе число"));
+                            
+                            // Запрашиваем у пользователя оператор
+                            const operator = prompt("Введите оператор (+, -, *, /)");
+                            
+                            // Проверяем корректность оператора и выполняем соответствующее действие
+                            if (operator === "+") {
+                            alert(`Результат: ${num1 + num2}`);
+                            } else if (operator === "-") {
+                            alert(`Результат: ${num1 - num2}`);
+                            } else if (operator === "*") {
+                            alert(`Результат: ${num1 * num2}`);
+                            } else if (operator === "/") {
+                            if (num2 !== 0) { // Проверка деления на ноль
+                                alert(`Результат: ${num1 / num2}`);
+                            } else {
+                                alert("Ошибка: Деление на ноль");
+                            }
+                            } else {
+                            alert("Неверный оператор");
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </section>
+               
+            <section id="task10">
+                <h2>Демонстрация работы с JavaScript</h2>
+                <div class="code-block">
+                    <h3>Код файла</h3>
+                    <pre>
+                        <code>
+                            // Задание 1: Объявление переменных и условные операторы
+                            console.log("Задание 1");
+                            let name = 'Тимофыей'; // Замените на ваше имя
+                            let age = 19; // Замените на ваш возраст
+                            
+                            if (age >= 18) {
+                              console.log("Вы совершеннолетний");
+                            } else {
+                              console.log("Вы несовершеннолетний");
+                            }
+                            
+                            // Задание 2: Циклы
+                            console.log("\n\nЗадание 2");
+                            // 1. Цикл for для вывода чисел от 1 до 10
+                            for (let i = 1; i <= 10; i++) {
+                              console.log(i);
+                            }
+                            
+                            // 2. Цикл while для вывода чисел от 10 до 1
+                            let j = 10;
+                            while (j >= 1) {
+                              console.log(j);
+                              j--;
+                            }
+                            
+                            // Задание 3: Работа с массивами
+                            console.log("\n\nЗадание 3");
+                            const lectures = ['Тема 1', 'Тема 2', 'Тема 3', 'Очередная тема 1', 'Очерекдная тема 2'];
+                            const practices = ['Практика 1', 'Практика 2', 'Практика 3'];
+                            
+                            // 2. Добавление новых элементов в массивы
+                            lectures.push('Тема 4');
+                            practices.unshift('Практика 4');
+                            
+                            // 3. Вывод всех тем лекций и практик
+                            lectures.forEach(lecture => console.log(lecture));
+                            practices.forEach(practice => console.log(practice));
+                            
+                            // 4. Функция для вывода элементов массива в строку через запятую
+                            function arrayToString(arr) {
+                              return arr.join(', ');
+                            }
+                            
+                            console.log(arrayToString(lectures)); // Вывод: "Тема 1, Тема 2, Тема 3, Тема 4"
+                            console.log(arrayToString(practices)); // Вывод: "Практика 1, Практика 2, Практика 3, Практика 4"
+                            
+                            // Задание 4: Манипуляции с массивами
+                            console.log("\n\nЗадание 4");
+                            // 1. Функция для получения тем, начинающихся с буквы "О"
+                            function filterTopicsStartingWithO(arr) {
+                              return arr.filter(topic => topic.startsWith('О'));
+                            }
+                            
+                            // 2. Вывод результата работы функции в консоль
+                            console.log(filterTopicsStartingWithO(lectures));                            
+                        </code>
+                    </pre>
+                </div>
+                <button id="executeTask10">Выполнить код</button>
+                <div id="consoleOutput"></div>
+            </section>
+            
+            <section id="dom-demo">
+                <h2>Работа с DOM и взаимодействие с объектами</h2>
+                <button id="goToDomDemo">Перейти на страницу демонстрации</button>
+            </section>
+
+            <section id="js-demo">
+                <h2>Встраивание JavaScript скриптов в HTML-документ</h2>
+                <button id="goToJsDemo">Перейти на страницу демонстрации</button>
+            </section>
+
+            <section id="js2-demo">
+                <h2>Отладка JavaScript-сценариев и создание обработчиков событий для элементов веб-документа</h2>
+                <button id="goToJs2Demo">Перейти на страницу демонстрации</button>
+            </section>
+
+            <section id="js3-demo">
+                <h2>Создание анимаций на JavaScript и работа с ними</h2>
+                <button id="goToJs3Demo">Перейти на страницу демонстрации</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+          <p class="copyright">&copy; Павленко Тимофей Сергеевич, 2024</p>
+          <a href="https://t.me/ptmff" target="_blank" class="telegram-link">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" alt="Telegram" class="telegram-logo">
+          </a>
+        </div>
+    </footer>
+
+    <script src="script10.js"></script>
+    <script>
+        // Добавляем обработчик для кнопки перехода
+        document.getElementById("goToDomDemo").addEventListener("click", () => {
+            window.location.href = "работа 11\\index.html";
+        });
+    </script>
+    <script>
+        // Добавляем обработчик для кнопки перехода
+        document.getElementById("goToJsDemo").addEventListener("click", () => {
+            window.location.href = "работа 12\\index.html";
+        });
+    </script>
+    <script>
+        // Добавляем обработчик для кнопки перехода
+        document.getElementById("goToJs2Demo").addEventListener("click", () => {
+            window.location.href = "работа 13\\index.html";
+        });
+    </script>
+    <script>
+        // Добавляем обработчик для кнопки перехода
+        document.getElementById("goToJs3Demo").addEventListener("click", () => {
+            window.location.href = "работа 14\\index.html";
+        });
+    </script>
+</body>
+</html>

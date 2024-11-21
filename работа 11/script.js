@@ -1,20 +1,48 @@
 // Часть 1: Работа с DOM
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Изменяем текст H1
     const h1 = document.querySelector("h1");
-    h1.textContent = "Добро пожаловать на наш сайт!";
-
-    // 2. Изменяем цвет текста H2
     const h2 = document.querySelector("h2");
-    h2.style.color = "red";
-
-    // 3. Изменяем текст первого параграфа
     const firstParagraph = document.querySelector("p");
-    firstParagraph.textContent = "Это новый текст параграфа.";
-
-    // 4. Скрываем встроенное видео
     const video = document.querySelector("iframe");
-    video.style.display = "none";
+    const toggleButton = document.getElementById("toggle-changes");
+
+    let changesApplied = false; // Флаг для отслеживания состояния изменений
+
+    // Исходные данные
+    const originalData = {
+        h1Text: h1.textContent,
+        h2Color: h2.style.color || "black",
+        paragraphText: firstParagraph.textContent,
+        videoDisplay: video.style.display || "block"
+    };
+
+    // Функция для применения изменений
+    function applyChanges() {
+        h1.textContent = "Добро пожаловать на наш сайт!";
+        h2.style.color = "red";
+        firstParagraph.textContent = "Это новый текст параграфа.";
+        video.style.display = "none";
+    }
+
+    // Функция для отмены изменений
+    function revertChanges() {
+        h1.textContent = originalData.h1Text;
+        h2.style.color = originalData.h2Color;
+        firstParagraph.textContent = originalData.paragraphText;
+        video.style.display = originalData.videoDisplay;
+    }
+
+    // Обработчик нажатия на кнопку
+    toggleButton.addEventListener("click", () => {
+        if (changesApplied) {
+            revertChanges();
+            toggleButton.textContent = "Внести изменения";
+        } else {
+            applyChanges();
+            toggleButton.textContent = "Отменить изменения";
+        }
+        changesApplied = !changesApplied;
+    });
 });
 
 // Часть 2: Работа с объектами

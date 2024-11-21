@@ -64,9 +64,17 @@
             </div>
             <p class="comparison-summary">CSS лучше для простых и производительных анимаций, а JS — для сложных и динамических.</p>
         </section>
+        <br>
+        <button id="redirect-btn">Вернуться на основную страницу</button>
         
     </main>
 
     <script src="script.js"></script>
+    <script>
+        // Добавляем обработчик события для кнопки
+        document.getElementById("redirect-btn").addEventListener("click", () => {
+            window.location.href = "../page5.html#js3-demo"; // Указываем путь к другому HTML
+        });
+    </script>
 </body>
 </html>

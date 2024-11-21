@@ -45,10 +45,19 @@
     <button id="switch-semester">Посмотреть практики второго семестра</button>
 
     <div>
-        <h2>Фотография студента</h2>
+        <h2>Фотография студента (нажмите на неё чтобы увидеть любимого преподавателя)</h2>
         <img id="student-photo" src="image.jpg" alt="Фото студента" width="200">
     </div>
 
+    <br>
+    <button id="redirect-btn">Вернуться на основную страницу</button>
+
     <script src="script.js"></script>
+    <script>
+        // Добавляем обработчик события для кнопки
+        document.getElementById("redirect-btn").addEventListener("click", () => {
+            window.location.href = "../page5.html#js2-demo"; // Указываем путь к другому HTML
+        });
+    </script>
 </body>
 </html>

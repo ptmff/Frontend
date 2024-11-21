@@ -10,7 +10,9 @@
     <h1>Оригинальный заголовок</h1>
     <h2>Заголовок H2</h2>
     <p>Это текст первого параграфа.</p>
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="560" height="315"></iframe>
+    <iframe width="720" height="405" src="https://rutube.ru/play/embed/4f06d1e4a2189779b4f01a3ef354e5eb/" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+    <button id="toggle-changes">Внести изменения</button>
 
     <form id="form">
         <label for="name">Имя:</label>
@@ -34,8 +36,16 @@
         <br>
 
         <button type="submit" id="submit-btn">Отправить</button>
+        <br>
+        <button id="redirect-btn">Вернуться на основную страницу</button>
     </form>
 
     <script src="script.js"></script>
+    <script>
+        // Добавляем обработчик события для кнопки
+        document.getElementById("redirect-btn").addEventListener("click", () => {
+            window.location.href = "../page5.html#dom-demo"; // Указываем путь к другому HTML
+        });
+    </script>
 </body>
 </html>

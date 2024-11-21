@@ -39,15 +39,38 @@ function resetBackgroundColor() {
     document.body.style.backgroundColor = 'white';
 }
 
+// Таймер обратного отсчета
+function startCountdown(seconds, callback) {
+    const countdownEl = document.getElementById('countdown');
+    let timeLeft = seconds;
+
+    const timerId = setInterval(() => {
+        timeLeft -= 1;
+        countdownEl.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerId);
+            callback();
+        }
+    }, 1000);
+}
+
 // Вызовы функций
 document.addEventListener('DOMContentLoaded', () => {
     showMessage("Скрипт загружен!");
     logCurrentTime();
     resetBackgroundColor();
-    setTimeout(() => {
+
+    startCountdown(5, () => {
         changeBackgroundColor("lightblue");
         toggleVisibility('.content');
-    }, 5000);
-    
+    });
+
     handleUtmTerm();
+
+    // Добавляем обработчик для кнопки
+    const navigateBtn = document.getElementById('navigate-btn');
+    navigateBtn.addEventListener('click', () => {
+        window.location.href = '../page5.html#goToJsDemo';
+    });
 });
